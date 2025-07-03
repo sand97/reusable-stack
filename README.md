@@ -1,7 +1,7 @@
-# turborepo-empty-starter
+# Reusable Stack
 
-An empty Turborepo starter.
+## Start project 
+```bash
+npm run dev
 
-```
-npx create-turbo -e https://github.com/tknickman/turborepo-empty-starter
 ```
