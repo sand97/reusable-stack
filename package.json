@@ -1,12 +1,13 @@
 {
-  "name": "turborepo-empty-starter",
+  "name": "turbo-whatsapp-cm",
   "version": "1.0.0",
   "private": true,
-  "description": "An empty Turborepo starter",
+  "description": "A turbo repo for WhatsApp CM application, including the backend and frontend services and packages",
   "main": "index.js",
   "scripts": {
     "build": "turbo build",
     "lint": "turbo lint",
+    "check-types": "tsc --noEmit",
     "dev": "turbo dev"
   },
   "keywords": [],
@@ -16,5 +17,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "turbo": "^2.5.4"
+  }
 }
