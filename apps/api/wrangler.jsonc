@@ -2,5 +2,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "api",
   "compatibility_date": "2024-04-01",
-  "main": "./src/index.ts"
+  "main": "./src/index.ts",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "dev-turbo-whatsapp-cm-d1",
+      "database_id": "2d34f6d8-0434-45b8-a3cd-247157c017c9"
+    }
+  ]
 }
