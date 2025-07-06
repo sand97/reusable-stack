@@ -14,20 +14,33 @@ npx wrangler@latest d1 create <database_name>
 npx wrangler types --env-interface CloudflareBindings
 ```
 
-### Generate and push migrations
+### Create an empty migration file
 ```bash
-npx drizzle-kit generate
+npx wrangler d1 migrations create <database_name> <migration>
 ```
+### Generate migration from an empty database (use it only for first migration)
 ```bash
-npx drizzle-kit migrate
+npx prisma migrate diff \
+  --from-empty \
+  --to-schema-datamodel ./prisma/schema.prisma \
+  --script \
+  --output migrations/<id>_<migration_name>.sql
 ```
-### Push migrations online
+### Generate migration from local database
 ```bash
-npx drizzle-kit push
+npx prisma migrate diff \
+  --from-local-d1 \
+  --to-schema-datamodel ./prisma/schema.prisma \
+  --script \
+  --output migrations/0002_create_post_table.sql
 ```
 ### Push migrations locally
 ```bash
-wrangler d1 migrations apply <database_name> --local
+npx wrangler d1 migrations apply <database_name> --local
+```
+### Push migrations online
+```bash
+npx wrangler d1 migrations apply <database_name> --remote
 ```
 
 ### Inspect local tables
